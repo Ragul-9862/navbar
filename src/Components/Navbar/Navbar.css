@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Titillium Web", sans-serif;
+}
+
+:root {
+	--mainColor: #29335c;
+	--mainColorLight: #5767aa;
+	--secondaryColor: #db2b39;
+	--textColor: #eee;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 80px;
+	padding: 0 2rem;
+	background-color: var(--mainColor);
+	color: var(--textColor);
+}
+
+nav a {
+	margin: 0 1rem;
+	color: var(--textColor);
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: var(--secondaryColor);
+}
+
+header .nav-btn {
+	padding: 5px;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--textColor);
+	visibility: hidden;
+	opacity: 0;
+	font-size: 1.8rem;
+}
+
+header div,
+nav {
+	display: flex;
+	align-items: center;
+}
+
+@media only screen and (max-width: 1024px) {
+	header .nav-btn {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	header nav {
+		position: fixed;
+		top: -100vh;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		background-color: var(--mainColor);
+		transition: 1s;
+	}
+
+	header .responsive_nav {
+		transform: translateY(100vh);
+	}
+
+	nav .nav-close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+	}
+
+	nav a {
+		font-size: 1.5rem;
+	}
+}
+
+#topbar {
+    background: #545454;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+  
+  #topbar .contact-info i {
+    font-style: normal;
+    color: #e96b56;
+  }
+  /* <---------------=========Top Bar---------------------==========================> */
+  #topbar .contact-info i a,
+  #topbar .contact-info i span {
+    padding-left: 5px;
+    color: #fff;
+  }
+  
+  #topbar .contact-info i a {
+    line-height: 0;
+    transition: 0.3s;
+  }
+  
+  #topbar .contact-info i a:hover {
+    color: #e96b56;
+  }
+  
+  #topbar .social-links a {
+    color: #bababa;
+    line-height: 0;
+    transition: 0.3s;
+    margin-left: 10px;
+  }
+  
+  #topbar .social-links a:hover {
+    color: white;
+  }
+  /* <--------------------------======== Hero =============================-------------------> */
+  #hero {
+    width: 100%;
+    height: 70vh;
+    background-color: rgba(59, 59, 59, 0.8);
+    overflow: hidden;
+    padding: 0;
+    margin-bottom: -120px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  #hero .carousel-item {
+    width: 100%;
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  #hero .carousel-item::before {
+    content: "";
+    background-color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+  
+  #hero .carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 120px;
+  }
+  
+  #hero .carousel-content {
+    text-align: center;
+  }
+  
+  #hero h2 {
+    color: #2e2e2e;
+    margin-bottom: 30px;
+    font-size: 48px;
+    font-weight: 700;
+  }
+  
+  #hero h2 span {
+    color: #e96b56;
+  }
+  
+  #hero p {
+    width: 80%;
+    animation-delay: 0.4s;
+    margin: 0 auto 30px auto;
+    color: arken(#545454, 15);
+  }
+  
+  #hero .carousel-inner .carousel-item {
+    transition-property: opacity;
+    background-position: center top;
+  }
+  
+  #hero .carousel-inner .carousel-item,
+  #hero .carousel-inner .active.carousel-item-start,
+  #hero .carousel-inner .active.carousel-item-end {
+    opacity: 0;
+  }
+  
+  #hero .carousel-inner .active,
+  #hero .carousel-inner .carousel-item-next.carousel-item-start,
+  #hero .carousel-inner .carousel-item-prev.carousel-item-end {
+    opacity: 1;
+    transition: 0.5s;
+  }
+  
+  #hero .carousel-inner .carousel-item-next,
+  #hero .carousel-inner .carousel-item-prev,
+  #hero .carousel-inner .active.carousel-item-start,
+  #hero .carousel-inner .active.carousel-item-end {
+    left: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  #hero .carousel-control-prev,
+  #hero .carousel-control-next {
+    width: 10%;
+  }
+  
+  #hero .carousel-control-next-icon,
+  #hero .carousel-control-prev-icon {
+    background: none;
+    font-size: 48px;
+    line-height: 1;
+    width: auto;
+    height: auto;
+    color: #545454;
+  }
+  
+  #hero .carousel-indicators li {
+    list-style-type: none;
+    cursor: pointer;
+    background-color: #e96b56;  /* Fix: use background-color instead of background */
+    overflow: hidden;
+    border: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50px;
+    margin-bottom: 180px;
+    opacity: 0.2;
+  }
+  
+  #hero p {
+    /* Fix: Corrected darken function and added percentage */
+    color: darken(#545454, 15%);
+  }
+  
+  #hero .btn-get-started {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 50px;
+    transition: 0.5s;
+    line-height: 1;
+    margin: 10px;
+    color: #fff;
+    animation-delay: 0.8s;
+    border: 2px solid #e96b56;
+    background: #e96b56;
+  }
+  
+  #hero .btn-get-started:hover {
+    background: transparent;
+    color: #e96b56;
+    text-decoration: none;
+  }
+  
+  @media (max-height: 768px),
+  (max-width: 1200px) {
+    #hero {
+      margin-bottom: 60px;
+    }
+  
+    #hero .carousel-container {
+      padding-bottom: 0;
+    }
+  
+    #hero .carousel-indicators li {
+      margin-bottom: 0;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #hero {
+      height: 90vh;
+    }
+  
+    #hero .carousel-item {
+      height: 90vh;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    #hero p {
+      width: 50%;
+    }
+  
+    #hero .carousel-control-prev,
+    #hero .carousel-control-next {
+      width: 5%;
+    }
+  }
+  
